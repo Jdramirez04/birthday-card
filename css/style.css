@@ -19,11 +19,15 @@ body {
 .birthdayCard:hover {
   transform: perspective(2500px) rotate(5deg);
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
-              0 10px 100px rgba(0, 0, 0, 0.5);
+    0 10px 100px rgba(0, 0, 0, 0.5);
 }
 
 .birthdayCard:hover .cardFront {
   transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .happy {
+  visibility: hidden;
 }
 
 .cardFront {
@@ -31,10 +35,10 @@ body {
   background-color: #fff;
   width: 250px;
   height: 350px;
-  overflow: hidden; /* Prevent overflow */
+  overflow: hidden;
   transform-origin: left;
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
-              30px 0 50px rgba(0, 0, 0, 0.4);
+    30px 0 50px rgba(0, 0, 0, 0.4);
   transition: 0.6s;
 }
 
@@ -43,6 +47,7 @@ body {
   text-align: center;
   margin: 30px;
   background-image: linear-gradient(120deg, #ffd856 0%, #f98c6e 100%);
+  transition: 0.1s;
 }
 
 .balloons {
@@ -79,6 +84,49 @@ body {
 
 .balloon-4 {
   background-color: rgba(12, 122, 159, 0.7);
+  left: 170px;
+  top: 50px;
+}
+
+.balloon-1::before,
+.balloon-2::before,
+.balloon-3::before,
+.balloon-4::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 155px;
+  background-color: #ffc848;
+  top: 95px;
+  left: 43px;
+}
+
+.balloon-1::after,
+.balloon-2::after,
+.balloon-3::after,
+.balloon-4::after {
+  content: "";
+  position: absolute;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  top: 94px;
+  left: 37px;
+}
+
+.balloon-1::after {
+  border-bottom: 10px solid #ff3e6b;
+}
+
+.balloon-2::after {
+  border-bottom: 10px solid #04b183;
+}
+
+.balloon-3::after {
+  border-bottom: 10px solid #ffc94c;
+}
+
+.balloon-4::after {
+  border-bottom: 10px solid #13a9bd;
 }
 
 .cardInside {
@@ -90,16 +138,12 @@ body {
   left: 0;
   top: 0;
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
-  padding: 20px; /* Add padding for inner content */
-  overflow: hidden; /* Prevent overflow */
 }
 
 p {
   font-family: "Brush Script MT", Times New Roman;
-  margin: 10px 0; /* Adjust margin */
+  margin: 40px;
   color: #333;
-  max-height: 200px; /* Limit height for overflow */
-  overflow: auto; /* Enable scrolling if text is too long */
 }
 
 .name {
